@@ -9,11 +9,17 @@ options = {
   :api_key => 'bob',
   :api_secret => 'lazar'
 }
+user = "demo"
+reason = nil
+comment = nil
 
 subscription = KillBillClient::Model::Subscription.new
 subscription.subscription_id = "92820d1c-1d4c-46eb-9010-26b0626a1927"
 
-audit = 'NONE'
-fields = subscription.custom_fields(audit, options)
-puts "#{fields}"
+tag_name = 'good_sub'
 
+subscription.remove_tag(tag_name,
+                        user,
+                        reason,
+                        comment,
+                        options)

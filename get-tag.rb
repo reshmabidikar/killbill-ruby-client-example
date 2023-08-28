@@ -13,7 +13,10 @@ options = {
 subscription = KillBillClient::Model::Subscription.new
 subscription.subscription_id = "92820d1c-1d4c-46eb-9010-26b0626a1927"
 
+included_deleted = false
 audit = 'NONE'
-fields = subscription.custom_fields(audit, options)
-puts "#{fields}"
 
+tags = subscription.tags(included_deleted,
+                  audit,
+                  options)
+puts "#{tags}"
