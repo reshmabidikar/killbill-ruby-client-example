@@ -46,7 +46,8 @@ KillBillClient::Model::Tenant.delete_tenant_user_key_value(key_name,
                                                            options)
 
 puts "retrieving by key prefix"
-key_prefix = "CATALOG"
+
+key_prefix = "demo_key"
 
 tenant_key_value = KillBillClient::Model::Tenant.search_tenant_config(key_prefix, options)
-puts "tenant_key_value is #{tenant_key_value.values}"
+puts "tenant_key_value is #{tenant_key_value}"
